@@ -54,7 +54,7 @@ s = N - s
 
 sig[32:] = int.to_bytes(s, 32)
 conn.recvuntil(b"signature: ")
-conn.sendline(sig.hex().encode()) # Kurimochi is an idiot :) :) :)
+conn.sendline(sig.hex().encode())
 
 flag = conn.recvline().decode()[:-1]
 print(flag)
